@@ -67,7 +67,8 @@
   flex: 1;
   overflow: auto;
   padding: 24px;
-  background-color: var(--mat-sys-surface);
+  background: linear-gradient(135deg, var(--mat-sys-surface) 0%, var(--mat-sys-surface-dim) 100%);
+  background-attachment: fixed;
 }
 
 @media (max-width: 768px) {

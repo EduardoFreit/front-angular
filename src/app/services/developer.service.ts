@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { DeveloperRequestDto } from '../dto/developer-request.dto';
 import { DeveloperResponseDto } from '../dto/developer-response.dto';
+import { SkillDto } from '../dto/skill.dto';
 import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
@@ -37,5 +38,9 @@ export class DeveloperService {
 
   delete(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
+  }
+
+  getSkills(): Observable<SkillDto[]> {
+    return this.http.get<SkillDto[]>(`${this.baseUrl}/skills`);
   }
 }

@@ -1,4 +1,14 @@
-<div class="developers-container">
-  <h1>Desenvolvedores</h1>
-  <p>Gerenciamento de desenvolvedores</p>
+<app-breadcrumb [items]="breadcrumbItems"></app-breadcrumb>
+
+<div class="content">
+  <div class="header">
+    <div>
+      <h1>Desenvolvedores</h1>
+      <p>Gerenciamento de desenvolvedores</p>
+    </div>
+    <button mat-raised-button color="tertiary" routerLink="/developers/create">
+      <mat-icon>add</mat-icon>
+      Novo Desenvolvedor
+    </button>
+  </div>
 </div>
