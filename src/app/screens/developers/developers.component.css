@@ -28,7 +28,7 @@
 }
 
 .table-wrapper {
-  background: var(--mat-sys-surface);
+  background: var(--mat-sys-surface-bright);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -80,7 +80,7 @@
 }
 
 .developers-table th {
-  background-color: var(--mat-sys-surface-dim);
+  background-color: var(--mat-sys-surface-bright);
   color: var(--mat-sys-on-surface);
   font-weight: 600;
   padding: 16px;
@@ -176,7 +176,7 @@
 }
 
 ::ng-deep .mat-mdc-paginator {
-  background-color: var(--mat-sys-surface);
+  background-color: var(--mat-sys-surface-bright);
 }
 
 @media (max-width: 768px) {
