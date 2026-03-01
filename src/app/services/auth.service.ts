@@ -19,7 +19,7 @@ export class AuthService {
         localStorage.setItem('tokenType', response.tokenType);
         localStorage.setItem('expiresIn', response.expiresIn.toString());
         localStorage.setItem('user', JSON.stringify(response.user));
-      })
+      }),
     );
   }
 }

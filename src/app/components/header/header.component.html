@@ -3,11 +3,16 @@
     <button mat-icon-button (click)="onToggleMenu()" class="menu-toggle">
       <mat-icon>menu</mat-icon>
     </button>
-    
+
     <span class="app-title">Gerenciador de Projetos</span>
     <span class="spacer"></span>
 
-    <button mat-icon-button [matMenuTriggerFor]="menu" class="user-menu" matTooltip="{{ userName }}">
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      class="user-menu"
+      matTooltip="{{ userName }}"
+    >
       <mat-icon>account_circle</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
@@ -23,4 +28,3 @@
     </mat-menu>
   </div>
 </mat-toolbar>
-

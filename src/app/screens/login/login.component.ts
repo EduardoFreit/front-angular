@@ -30,7 +30,7 @@ export class LoginComponent {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
   ) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
@@ -46,10 +46,15 @@ export class LoginComponent {
       next: () => {
         this.router.navigate(['/dashboard']);
       },
-      error: err => {
+      error: (err) => {
         this.error.set(err?.error?.message || 'Login falhou. Tente novamente.');
       },
       complete: () => this.loading.set(false),
     });
-  } 
+  }
+
+  removeError(): void {
+    this.loading.set(false);
+    this.error.set(null);
+  }
 }

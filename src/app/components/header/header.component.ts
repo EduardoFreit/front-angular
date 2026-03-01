@@ -11,16 +11,24 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterModule, MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule, MatDividerModule, MatTooltipModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatDividerModule,
+    MatTooltipModule,
+  ],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  private router = inject(Router);
   userName: string = 'Usuário';
   toggleMenuClick = output<void>();
 
-  constructor() {
+  constructor(private router: Router) {
     this.loadUserName();
   }
 
@@ -48,4 +56,3 @@ export class HeaderComponent {
     this.router.navigate(['/login']);
   }
 }
-

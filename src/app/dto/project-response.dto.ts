@@ -1,4 +1,4 @@
-import { ProjectStatusEnum } from "../enums/project-status.enum";
+import { ProjectStatusEnum } from '../enums/project-status.enum';
 
 export interface ProjectResponseDto {
   id: number;

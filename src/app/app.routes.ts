@@ -4,6 +4,7 @@ import { DashboardComponent } from './screens/dashboard/dashboard.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { AuthGuard } from './guards/auth.guard';
 import { PublicGuard } from './guards/public.guard';
+import { RoleGuard } from './guards/role.guard';
 import { DevelopersComponent } from './screens/developers/developers.component';
 import { ProjectsComponent } from './screens/projects/projects.component';
 import { AllocationsComponent } from './screens/allocations/allocations.component';
@@ -16,10 +17,26 @@ export const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'developers', component: DevelopersComponent },
-      { path: 'projects', component: ProjectsComponent },
-      { path: 'allocations', component: AllocationsComponent },
+      {
+        path: 'developers',
+        component: DevelopersComponent,
+        canActivate: [RoleGuard],
+        data: { roles: ['ADMIN'] },
+      },
+      {
+        path: 'projects',
+        component: ProjectsComponent,
+        canActivate: [RoleGuard],
+        data: { roles: ['ADMIN'] },
+      },
+      {
+        path: 'allocations',
+        component: AllocationsComponent,
+        canActivate: [RoleGuard],
+        data: { roles: ['ADMIN'] },
+      },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-    ]
+    ],
   },
+  { path: '**', redirectTo: '/login' },
 ];

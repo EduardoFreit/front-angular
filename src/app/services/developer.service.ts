@@ -14,7 +14,7 @@ export class DeveloperService {
   findAll(params?: any): Observable<any> {
     let httpParams = new HttpParams();
     if (params) {
-      Object.keys(params).forEach(key => {
+      Object.keys(params).forEach((key) => {
         if (params[key] !== undefined && params[key] !== null) {
           httpParams = httpParams.set(key, params[key]);
         }
