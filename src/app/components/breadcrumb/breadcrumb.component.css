@@ -18,8 +18,8 @@
 }
 
 .breadcrumb-item:hover:not(.active) {
-  background-color: var(--mat-sys-tertiary-container);
-  color: var(--mat-sys-on-tertiary-container);
+  background-color: var(--mat-sys-surface-container);
+  color: var(--mat-sys-on-primary-container);
 }
 
 .breadcrumb-item.active {

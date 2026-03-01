@@ -5,11 +5,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 export interface ResultDialogData {
-  type: 'success' | 'error';
+  type: 'success' | 'error' | 'confirm';
   title: string;
   message: string;
   confirmText?: string;
   cancelText?: string;
+  showCancel?: boolean;
 }
 
 @Component({
@@ -34,10 +35,14 @@ export class ResultDialogComponent {
   }
 
   get iconName(): string {
-    return this.data.type === 'success' ? 'check_circle' : 'error';
+    if (this.data.type === 'success') return 'check_circle';
+    if (this.data.type === 'error') return 'error';
+    return 'help';
   }
 
   get iconClass(): string {
-    return this.data.type === 'success' ? 'icon-success' : 'icon-error';
+    if (this.data.type === 'success') return 'icon-success';
+    if (this.data.type === 'error') return 'icon-error';
+    return 'icon-confirm';
   }
 }

@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: var(--mat-sys-tertiary-container);
+  background: var(--mat-sys-surface-container-highest);
 }
 
 mat-card {
@@ -13,8 +13,19 @@ mat-card {
 
 .full-width {
   width: 100%;
+  margin-bottom: 12px;
 }
 
-.error-message {
+mat-card-header {
   margin-bottom: 16px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form button {
+  width: 100%;
+  margin-top: 8px;
 }

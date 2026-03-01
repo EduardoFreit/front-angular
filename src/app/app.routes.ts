@@ -7,6 +7,7 @@ import { PublicGuard } from './guards/public.guard';
 import { RoleGuard } from './guards/role.guard';
 import { DevelopersComponent } from './screens/developers/developers.component';
 import { CreateDeveloperComponent } from './screens/developers/create-developer/create-developer.component';
+import { EditarDeveloperComponent } from './screens/developers/edit-developer/edit-developer.component';
 import { ProjectsComponent } from './screens/projects/projects.component';
 import { AllocationsComponent } from './screens/allocations/allocations.component';
 
@@ -27,6 +28,12 @@ export const routes: Routes = [
       {
         path: 'developers/create',
         component: CreateDeveloperComponent,
+        canActivate: [RoleGuard],
+        data: { roles: ['ADMIN'] },
+      },
+      {
+        path: 'developers/:id/edit',
+        component: EditarDeveloperComponent,
         canActivate: [RoleGuard],
         data: { roles: ['ADMIN'] },
       },

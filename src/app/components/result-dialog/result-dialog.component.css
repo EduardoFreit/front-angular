@@ -42,10 +42,23 @@
       color: #c62828;
     }
   }
+
+  &.confirm {
+    background-color: #fff3e0;
+
+    mat-icon {
+      color: #ff9800;
+    }
+
+    h2 {
+      color: #e65100;
+    }
+  }
 }
 
 .icon-success,
-.icon-error {
+.icon-error,
+.icon-confirm {
   font-size: 24px;
   width: 24px;
   height: 24px;
@@ -56,6 +69,7 @@
   padding: 16px 24px;
   font-size: 14px;
   line-height: 1.5;
+  text-align: center;
 
   p {
     margin: 0;
@@ -66,8 +80,9 @@
 .dialog-actions {
   display: flex;
   gap: 8px;
-  padding: 16px 24px;
-  border-top: 1px solid #e0e0e0;
+  padding: 24px;
+  margin-top: 16px;
+  border-top: 2px solid #e0e0e0;
 
   button {
     min-width: 100px;
@@ -80,6 +95,10 @@
 
 .actions-center {
   justify-content: center;
+}
+
+.actions-between {
+  justify-content: space-between;
 }
 
 .btn-cancel {
@@ -106,5 +125,14 @@
 
   &:hover {
     background-color: #da190b;
+  }
+}
+
+.btn-confirm {
+  background-color: #ff9800;
+  color: white;
+
+  &:hover {
+    background-color: #e68900;
   }
 }

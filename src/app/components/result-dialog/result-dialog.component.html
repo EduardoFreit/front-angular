@@ -8,12 +8,13 @@
         <p>{{ data.message }}</p>
     </div>
 
-    <div mat-dialog-actions
-        [ngClass]="{'actions-center': data.type === 'success', 'actions-end': data.type === 'error'}">
-        <button mat-button (click)="onCancel()" class="btn-cancel" *ngIf="data.type === 'error'">
+    <div mat-dialog-actions class="actions-center">
+        <button mat-button (click)="onCancel()" class="btn-cancel"
+            *ngIf="(data.type === 'error' && data.showCancel) || data.type === 'confirm'">
             {{ data.cancelText || 'Cancelar' }}
         </button>
-        <button mat-raised-button (click)="onOk()" [ngClass]="data.type === 'success' ? 'btn-success' : 'btn-error'">
+        <button mat-raised-button (click)="onOk()"
+            [ngClass]="data.type === 'success' ? 'btn-success' : data.type === 'confirm' ? 'btn-confirm' : 'btn-error'">
             {{ data.confirmText || 'OK' }}
         </button>
     </div>

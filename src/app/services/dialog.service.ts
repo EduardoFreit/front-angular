@@ -31,6 +31,21 @@ export class DialogService {
     });
   }
 
+  confirm(
+    title: string,
+    message: string,
+    confirmText: string = 'Confirmar',
+    cancelText: string = 'Cancelar',
+  ): Promise<boolean> {
+    return this.openDialog({
+      type: 'confirm',
+      title,
+      message,
+      confirmText,
+      cancelText,
+    });
+  }
+
   custom(data: ResultDialogData): Promise<boolean> {
     return this.openDialog(data);
   }
