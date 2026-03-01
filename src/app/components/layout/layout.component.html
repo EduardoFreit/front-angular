@@ -1,0 +1,29 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav class="app-sidenav" [opened]="sidenavOpen()" mode="over" hasBackdrop="true">
+    <nav class="nav-menu">
+      <button mat-button routerLink="/dashboard" routerLinkActive="active" class="nav-item" (click)="toggleSidenav()">
+        <mat-icon>dashboard</mat-icon>
+        <span>Dashboard</span>
+      </button>
+      <button mat-button routerLink="/allocations" routerLinkActive="active" class="nav-item" (click)="toggleSidenav()">
+        <mat-icon>assignment</mat-icon>
+        <span>Alocações</span>
+      </button>
+      <button mat-button routerLink="/developers" routerLinkActive="active" class="nav-item" (click)="toggleSidenav()">
+        <mat-icon>people</mat-icon>
+        <span>Desenvolvedores</span>
+      </button>
+      <button mat-button routerLink="/projects" routerLinkActive="active" class="nav-item" (click)="toggleSidenav()">
+        <mat-icon>folder</mat-icon>
+        <span>Projetos</span>
+      </button>
+    </nav>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="sidenav-content">
+    <app-header (toggleMenuClick)="toggleSidenav()"></app-header>
+    <main class="main-content">
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,20 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--mat-sys-tertiary-container);
+}
+
+mat-card {
+  width: 350px;
+  padding: 24px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.error-message {
+  margin-bottom: 16px;
+}

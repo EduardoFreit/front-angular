@@ -1,0 +1,14 @@
+.developers-container {
+  padding: 24px;
+}
+
+.developers-container h1 {
+  margin: 0 0 16px 0;
+  color: var(--mat-sys-on-surface);
+}
+
+.developers-container p {
+  margin: 0;
+  color: var(--mat-sys-on-surface-variant);
+  font-size: 14px;
+}
